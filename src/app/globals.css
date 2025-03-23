@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 245, 245, 245;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Markdown スタイル */
+.prose h1 {
+  @apply text-3xl font-bold mt-8 mb-4;
+}
+
+.prose h2 {
+  @apply text-2xl font-bold mt-6 mb-3;
+}
+
+.prose h3 {
+  @apply text-xl font-bold mt-5 mb-2;
+}
+
+.prose p {
+  @apply my-4;
+}
+
+.prose ul {
+  @apply list-disc pl-6 my-4;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 my-4;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic my-4;
+}
+
+.prose pre {
+  @apply bg-gray-100 p-4 rounded-md overflow-auto my-4;
+}
+
+.prose code {
+  @apply bg-gray-100 px-1 py-0.5 rounded-sm;
+}
+
+.prose a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.prose img {
+  @apply max-w-full h-auto my-4;
+}
+
+.prose hr {
+  @apply my-6 border-t border-gray-300;
+}
