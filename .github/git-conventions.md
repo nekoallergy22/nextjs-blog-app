@@ -149,3 +149,55 @@ v2.0.0
 - コミットメッセージは具体的かつ明確に書く
 - 機能ブランチは定期的に `main` または `develop` ブランチと同期させる
 - 不要になったブランチは削除する
+
+## 実際のワークフロー例
+
+以下は、ドキュメント追加からプルリクエストのマージまでの一連の流れの例です。
+
+### ドキュメント追加の例（Vercel デプロイガイド）
+
+1. ドキュメント用のブランチを作成
+
+   ```bash
+   git checkout -b docs/vercel-deployment-guide
+   ```
+
+2. ファイルを作成・編集
+   （docs/vercel-deployment-guide.md を作成・編集）
+
+3. 変更をステージングに追加
+
+   ```bash
+   git add docs/vercel-deployment-guide.md
+   ```
+
+4. コミットメッセージ規約に従ってコミット
+
+   ```bash
+   git commit -m "docs: add vercel deployment guide"
+   ```
+
+5. リモートリポジトリにプッシュ
+
+   ```bash
+   git push -u origin docs/vercel-deployment-guide
+   ```
+
+6. GitHub CLI を使用してプルリクエストを作成
+
+   ```bash
+   gh pr create --title "docs: add vercel deployment guide" --body "Vercelへのデプロイ手順をドキュメント化しました。..."
+   ```
+
+7. プルリクエストをマージ
+
+   ```bash
+   gh pr merge 4 --merge
+   ```
+
+8. main ブランチに切り替えて最新の変更を取得
+   ```bash
+   git checkout main && git pull
+   ```
+
+このワークフローにより、ドキュメントの変更が適切にレビューされ、メインブランチに統合されます。
